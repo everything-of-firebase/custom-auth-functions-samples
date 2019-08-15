@@ -1,1 +1,1 @@
-# FirebaseAuthSocialLoginServer
+# FirebaseAuthSocialLogin
