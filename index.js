@@ -109,7 +109,7 @@ const request = require('request-promise')
   }
 
   exports.kakaoCustomAuth = functions.region('asia-northeast1').https
-  .onRequest((req, resp) => {
+  .onRequest((req, res) => {
     const token = req.body.token
     if (!token) return resp.status(400).send({error: 'There is no token.'})
     .send({message: 'Access token is a required parameter.'})
