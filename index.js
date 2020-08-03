@@ -23,7 +23,7 @@ admin.initializeApp({
 
 const request = require('request-promise')
 
-    const kakaoRequestMeUrl = 'https://kapi.kakao.com/v1/user/me?secure_resource=true'
+    const kakaoRequestMeUrl = 'https://kapi.kakao.com/v2/user/me?secure_resource=true'
     
     /**
      * requestMe - Returns user profile from Kakao API
@@ -99,7 +99,7 @@ const request = require('request-promise')
         nickname = body.properties.nickname
         profileImage = body.properties.profile_image
       }
-      return updateOrCreateUser(userId, body.kaccount_email, nickname,
+      return updateOrCreateUser(userId, body.kakao_account.email, nickname,
         profileImage)
     }).then((userRecord) => {
       const userId = userRecord.uid
